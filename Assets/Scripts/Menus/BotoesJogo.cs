@@ -7,11 +7,11 @@ using UnityEngine.SceneManagement;
 public class BotoesJogo : MonoBehaviour{
     public void jogar(){
         // SceneManagement.LoadScene("Jogo");
-        SceneManager.LoadScene("Jogo");
+        SceneManager.LoadScene("sceneJogo");
     }
 
     public void menu(){
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("sceneMenu");
     }
 
 }

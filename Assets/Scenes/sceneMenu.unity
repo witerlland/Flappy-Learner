@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 228407533}
   - component: {fileID: 228407532}
   - component: {fileID: 228407531}
+  - component: {fileID: 228407534}
   m_Layer: 0
   m_Name: FundoCeu
   m_TagString: Untagged
@@ -210,6 +211,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &228407534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228407529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 865b19a6a4b0ffa428d2d816e5fdf3be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Velocidade: 0.0005
 --- !u!1 &278178210
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,6 +560,7 @@ GameObject:
   - component: {fileID: 1157806422}
   - component: {fileID: 1157806421}
   - component: {fileID: 1157806420}
+  - component: {fileID: 1157806423}
   m_Layer: 0
   m_Name: FundoChao
   m_TagString: Untagged
@@ -624,6 +639,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1157806423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157806418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 865b19a6a4b0ffa428d2d816e5fdf3be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Velocidade: 0.003
 --- !u!1 &1231697393
 GameObject:
   m_ObjectHideFlags: 0
@@ -669,6 +697,7 @@ GameObject:
   - component: {fileID: 1692700799}
   - component: {fileID: 1692700798}
   - component: {fileID: 1692700797}
+  - component: {fileID: 1692700800}
   m_Layer: 0
   m_Name: FundoGrama
   m_TagString: Untagged
@@ -747,6 +776,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1692700800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692700795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 865b19a6a4b0ffa428d2d816e5fdf3be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Velocidade: 0.001
 --- !u!1 &1952302223
 GameObject:
   m_ObjectHideFlags: 0
@@ -759,6 +801,7 @@ GameObject:
   - component: {fileID: 1952302227}
   - component: {fileID: 1952302226}
   - component: {fileID: 1952302225}
+  - component: {fileID: 1952302228}
   m_Layer: 5
   m_Name: Jogar
   m_TagString: Untagged
@@ -827,7 +870,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1952302226}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1952302228}
+        m_MethodName: jogar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1952302226
@@ -868,3 +922,15 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1952302223}
   m_CullTransparentMesh: 0
+--- !u!114 &1952302228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1952302223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99f307b92c2992341a0c15c65ecc327c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

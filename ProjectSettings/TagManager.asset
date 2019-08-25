@@ -46,9 +46,9 @@ TagManager:
   - name: Fundo
     uniqueID: 2084340275
     locked: 0
-  - name: UI
-    uniqueID: 1419337045
-    locked: 0
   - name: Personagem
     uniqueID: 2893657985
+    locked: 0
+  - name: UI
+    uniqueID: 1419337045
     locked: 0

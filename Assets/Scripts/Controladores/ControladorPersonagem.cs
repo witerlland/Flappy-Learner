@@ -25,6 +25,8 @@ public class ControladorPersonagem : MonoBehaviour{
                     if (this.GetComponent<Rigidbody2D>().isKinematic) {
                         this.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
                         voar();
+                    } else {
+                        voar();
                     }
                 }
             }
@@ -60,29 +62,37 @@ public class ControladorPersonagem : MonoBehaviour{
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D other) {
+    void OnCollisionEnter2D(Collision2D other) {
         if (jogando) {
-            if (other.gameObject.name == "fundoChao") {
+            if (other.gameObject.name == "FundoChao") {
+
                 if (podeVoar) {
                     controlador.GetComponent<ControladorJogo>().pararJogo();
                     this.transform.rotation = Quaternion.Euler(this.transform.rotation.x, this.transform.rotation.y, 270.0f);
-                    this.GetComponent<Animation>().enabled = false;
+                    this.GetComponent<Animator>().enabled = false;
+
+                    this.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+                    jogando = false;
+                    other.transform.GetComponent<AudioSource>().Play();
+                    controlador.GetComponent<ControladorPontos>().PreencherGo();
                 }
 
                 this.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
                 jogando = false;
                 other.transform.GetComponent<AudioSource>().Play();
                 controlador.GetComponent<ControladorPontos>().PreencherGo(); 
+
             }else if (other.gameObject.tag == "canos" || other.gameObject.tag == "limite") {
                 podeVoar = false;
                 controlador.GetComponent<ControladorJogo>().pararJogo();
 
                 foreach (Transform child in other.transform.parent) {
                     child.transform.GetComponent<BoxCollider2D>().enabled = false;
-                    GetComponent<AudioSource>().Play();
-                    this.GetComponent<Animation>().enabled = false;
-                    this.transform.rotation = Quaternion.Euler(this.transform.rotation.x, this.transform.rotation.y, 270.0f);
                 }
+
+                GetComponent<AudioSource>().Play();
+                this.GetComponent<Animator>().enabled = false;
+                this.transform.rotation = Quaternion.Euler(this.transform.rotation.x, this.transform.rotation.y, 270.0f);
             }
         }
     }
